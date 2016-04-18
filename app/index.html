@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.) styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+    </head>
+
+    <body ng-app="app" ng-controller="appController">
+        <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+        <!-- Add your site or application content here -->
+        <div class="header">
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#/">Phone Number Formatter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>International</h2>
+                    <h3>Using Input</h3>
+                    <div>
+                        <input type="text" ng-model="international.phoneNumber" phone-number></input>
+                    </div>
+                    <br>
+                    <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="international.inputHtml"></div>
+                    <h3>Using Element</h3>
+                    <div>
+                        <phone-number ng-model="international.phoneNumber"></phone-number>
+                    </div>
+                    <br>
+                    <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="international.elementHtml"></div>
+                    <h3>Using Filter</h3>
+                    <p>{{international.phoneNumber|phoneNumber}}</p>
+                    <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="international.filterHtml"></div>
+                </div>
+                <div class="col-sm-6">
+                    <h2>National</h2>
+                    <h3>Using Input</h3>
+                    <div>
+                        <input type="text" ng-model="national.phoneNumber" phone-number></input>
+                    </div>
+                    <br>
+                    <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="national.inputHtml"></div>
+                    <h3>Using Element</h3>
+                    <div>
+                        <phone-number ng-model="national.phoneNumber"></phone-number>
+                    </div>
+                    <br>
+                    <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="national.elementHtml"></div>
+                    <h3>Using Filter</h3>
+                    <p>{{national.phoneNumber|phoneNumber}}</p>
+                    <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="national.filterHtml"></div>
+                </div>
+            </div>
+        </div>
+        <!-- build:js(.) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/lodash/dist/lodash.min.js"></script>
+        <script src="bower_components/ace-builds/src-min-noconflict/ace.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/angular-ui-ace/ui-ace.min.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <!-- <script src="dist/i18n-phonenumber-parser.js"></script> -->
+        <script src="dist/phoneNumberFormatter.js"></script>
+        <!-- endbuild -->
+        <script src="core/app.js"></script>
+    </body>
+
+</html>
+
