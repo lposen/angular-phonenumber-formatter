@@ -59,7 +59,7 @@ or
 
     var formattedNumber = numberFormatter.getFormattedNumber(myNum); //(123) 456-7890
     var isInternational = numberFormatter.isInternational(myNum); //false
-    var unformattedNumer = numberFormatter.trim(myNum); //1234567890
+    var unformattedNumber = numberFormatter.trim(myNum); //1234567890
 
 
 
