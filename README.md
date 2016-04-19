@@ -53,6 +53,7 @@ or
     $scope.myPhoneNumber = $filter('phoneNumber')($scope.myPhoneNumber);
 
 ### Factory (PhoneNumberFormatter)
+Inject `PhoneNumberFormatter` as a dependency.
 
     var myNum = 1234567890,
         numberFormatter = new PhoneNumberFormatter();
