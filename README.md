@@ -1,5 +1,6 @@
-# angular-phonenumber-formatter
-Formats a international and (American) national phone numbers using angular and Googles i18n library.
+This library formats American national numbers and international numbers using Angular, [Googles i18n Phone Number Formatter](https://github.com/googlei18n/libphonenumber).
+
+[See Demo](http://lposen.github.io/angular-phonenumber-formatter/app/phoneNumberFormatter/#/)
 
 NOTE: This was made for a specific project, so is not very configurable.
 
@@ -18,36 +19,50 @@ NOTE: This was made for a specific project, so is not very configurable.
 
 ## Usage
 ### Setup
-```
-    <script>
-        angular.module( "app", [
-            "phoneNumberFormatter"
-        ] );
-    </script>
-```
+Add the module as a dependency
+
+    
+    angular.module( "app", [
+       "phoneNumberFormatter"
+    ] );
+
 ### Input
 Add "phone-number" as an attribute and the value as ng-model
-```
+
+
     <input type="text" ng-model="myPhoneNumber" phone-number></input>
-```
+
+
 ### Element
 Use "phone-number" as an attribute or element. Add the value as ng-model.
 If you're using it as an attribute, be aware that it creates an isolate scope, so you cannot use another attribute that creates an isolate scope on the same element
-```
+
+
     <phone-number ng-model="myPhoneNumber"></phone-number>
-```
+
 or
-```
+
     <p phone-number ng-model="myPhoneNumber"></p>
-```
+
+
 ### Filter
-```
+
     <p>{{myPhoneNumber|phoneNumber}}</p>
-```
 or
-```
+
     $scope.myPhoneNumber = $filter('phoneNumber')($scope.myPhoneNumber);
-```
+
+### Factory (PhoneNumberFormatter)
+
+    var myNum = 1234567890,
+        numberFormatter = new PhoneNumberFormatter();
+    
+    var formattedNumber = numberFormatter.getFormattedNumber(myNum); //(123) 456-7890
+    var isInternational = numberFormatter.isInternational(myNum); //false
+    var unformattedNumer = numberFormatter.trim(myNum); //1234567890
+
+    
+
 ## Demo
 1. Download app
 2. Run "npm install"
