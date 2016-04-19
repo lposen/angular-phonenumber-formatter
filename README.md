@@ -18,7 +18,6 @@ NOTE: This was made for a specific project, so is not very configurable.
 
 ## Usage
 ### Setup
-Add the module as a dependency
 ```
     <script>
         angular.module( "app", [
