@@ -1,6 +1,6 @@
 This library formats American national numbers and international numbers using Angular, [Googles i18n Phone Number Formatter](https://github.com/googlei18n/libphonenumber).
 
-[See Demo](http://lposen.github.io/angular-phonenumber-formatter/app/phoneNumberFormatter/#/)
+[See Demo](http://lposen.github.io/angular-phonenumber-formatter/demo)
 
 NOTE: This was made for a specific project, so is not very configurable.
 
