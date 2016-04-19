@@ -14,7 +14,7 @@ NOTE: This was made for a specific project, so is not very configurable.
 - X's are not stripped from national numbers as they could be the precursor for extensions.  Other letters are.
 - X's are stripped from international extensions (a company decision)
 - If a national number has more than 10 digits, it will format the first 10 digits and append the rest, seperated by a space.
-⋅⋅* Eg: 1234567890x123 becomes (123) 456-7890 x123
+  * Eg: 1234567890x123 becomes (123) 456-7890 x123
 - International numbers will begin with a "+" to differentiate them from national numbers
 
 ## Usage
