@@ -21,7 +21,7 @@ NOTE: This was made for a specific project, so is not very configurable.
 ### Setup
 Add the module as a dependency
 
-    
+
     angular.module( "app", [
        "phoneNumberFormatter"
     ] );
@@ -56,15 +56,16 @@ or
 
     var myNum = 1234567890,
         numberFormatter = new PhoneNumberFormatter();
-    
+
     var formattedNumber = numberFormatter.getFormattedNumber(myNum); //(123) 456-7890
     var isInternational = numberFormatter.isInternational(myNum); //false
     var unformattedNumer = numberFormatter.trim(myNum); //1234567890
 
-    
+
 
 ## Demo
 1. Download app
-2. Run "npm install"
-3. Run "bower install"
-4. Run "grunt serve"
+2. cd into "demo"
+3. Run "npm install"
+4. Run "bower install"
+5. Run "grunt serve"
