@@ -20,9 +20,11 @@ NOTE: This was made for a specific project, so is not very configurable.
 ### Setup
 Add the module as a dependency
 ```
-    angular.module( "app", [
-        "phoneNumberFormatter"
-    ] );
+    <script>
+        angular.module( "app", [
+            "phoneNumberFormatter"
+        ] );
+    </script>
 ```
 ### Input
 Add "phone-number" as an attribute and the value as ng-model
