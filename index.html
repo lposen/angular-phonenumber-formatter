@@ -1,117 +1,166 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Angular-phonenumber-formatter by lposen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Angular-phonenumber-formatter</h1>
-      <h2 class="project-tagline">Formats a international and (American) national phone numbers using angular and Googles i18n library</h2>
-      <a href="https://github.com/lposen/angular-phonenumber-formatter" class="btn">View on GitHub</a>
-      <a href="https://github.com/lposen/angular-phonenumber-formatter/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/lposen/angular-phonenumber-formatter/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
 
-    <section class="main-content">
-      <p>This library formats American national numbers and international numbers using Angular, Googles i18n Phone Number Formatter.</p>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular-phonenumber-formatter by lposen</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    </head>
 
-<p><a href="http://lposen.github.io/angular-phonenumber-formatter/app/phoneNumberFormatter/#/">See Demo</a></p>
-
-<p>NOTE: This was made for a specific project, so is not very configurable.</p>
-
-<h2>
+    <body>
+        <section class="page-header">
+            <h1 class="project-name">Angular-phonenumber-formatter</h1>
+            <h2 class="project-tagline">Formats a international and (American) national phone numbers using angular and Googles i18n library</h2>
+            <a href="https://github.com/lposen/angular-phonenumber-formatter" class="btn">View on GitHub</a>
+            <a href="https://github.com/lposen/angular-phonenumber-formatter/zipball/master" class="btn">Download .zip</a>
+            <a href="https://github.com/lposen/angular-phonenumber-formatter/tarball/master" class="btn">Download .tar.gz</a>
+        </section>
+        <section class="main-content">
+            <p>This library formats American national numbers and international numbers using Angular, Googles i18n Phone Number Formatter.</p>
+            <p><a href="http://lposen.github.io/angular-phonenumber-formatter/app/phoneNumberFormatter/#/">See Demo</a></p>
+            <p>NOTE: This was made for a specific project, so is not very configurable.</p>
+            <h2>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
-
-<ul>
-<li>AngularJS</li>
-<li>Lodash</li>
-</ul>
-
-<h2>
+            <ul>
+                <li>AngularJS</li>
+                <li>Lodash</li>
+            </ul>
+            <h2>
 <a id="assumptions" class="anchor" href="#assumptions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Assumptions</h2>
-
-<ul>
-<li>National numbers are American numbers.  They will be decorated as (###) ###-####.</li>
-<li>X's are not stripped from national numbers as they could be the precursor for extensions.  Other letters are.</li>
-<li>X's are stripped from international extensions (a company decision)</li>
-<li>If a national number has more than 10 digits, it will format the first 10 digits and append the rest, seperated by a space.</li>
-<li>Eg: 1234567890x123 becomes (123) 456-7890 x123</li>
-<li>International numbers will begin with a "+" to differentiate them from national numbers</li>
-</ul>
-
-<h2>
+            <ul>
+                <li>National numbers are American numbers. They will be decorated as (###) ###-####.</li>
+                <li>X's are not stripped from national numbers as they could be the precursor for extensions. Other letters are.</li>
+                <li>X's are stripped from international extensions (a company decision)</li>
+                <li>If a national number has more than 10 digits, it will format the first 10 digits and append the rest, seperated by a space.</li>
+                <li>Eg: 1234567890x123 becomes (123) 456-7890 x123</li>
+                <li>International numbers will begin with a "+" to differentiate them from national numbers</li>
+            </ul>
+            <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
-
-<h3>
+            <h3>
 <a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h3>
-
-<p>Add the module as a dependency
-'''
-angular.module( "app", [
-    "phoneNumberFormatter"
-] );
-'''</p>
-
-<h3>
+            <p>Add the module as a dependency ''' angular.module( "app", [ "phoneNumberFormatter" ] ); '''
+            </p>
+            <h3>
 <a id="input" class="anchor" href="#input" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Input</h3>
-
-<p>Add "phone-number" as an attribute and the value as ng-model
-'''
-
-'''</p>
-
-<h3>
+            <p>Add "phone-number" as an attribute and the value as ng-model ''' '''
+            </p>
+            <h3>
 <a id="element" class="anchor" href="#element" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Element</h3>
-
-<p>Use "phone-number" as an attribute or element. Add the value as ng-model.
-If you're using it as an attribute, be aware that it creates an isolate scope, so you cannot use another attribute that creates an isolate scope on the same element
-'''
-
-'''
-or
-'''</p>
-
-<p></p>
-
-<p>'''</p>
-
-<h3>
+            <p>Use "phone-number" as an attribute or element. Add the value as ng-model. If you're using it as an attribute, be aware that it creates an isolate scope, so you cannot use another attribute that creates an isolate scope on the same element ''' ''' or '''
+            </p>
+            <p></p>
+            <p>'''</p>
+            <h3>
 <a id="filter" class="anchor" href="#filter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Filter</h3>
+            <p>'''</p>
+            <p>{{myPhoneNumber|phoneNumber}}</p>
+            <p>''' or ''' $scope.myPhoneNumber = $filter('phoneNumber')($scope.myPhoneNumber); '''
+            </p>
+            <h2>
+<div class="col-sm-6">
+                    <h2>International</h2>
+            <h3>Using Input</h3>
+            <div>
+                <input type="text" ng-model="international.phoneNumber" phone-number></input>
+            </div>
+            <br>
+            <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="international.inputHtml"></div>
+            <h3>Using Element</h3>
+            <div>
+                <phone-number ng-model="international.phoneNumber"></phone-number>
+            </div>
+            <br>
+            <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="international.elementHtml"></div>
+            <h3>Using Filter</h3>
+            <p>{{international.phoneNumber|phoneNumber}}</p>
+            <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="international.filterHtml"></div>
+            </div>
+            <div class="col-sm-6">
+                <h2>National</h2>
+                <h3>Using Input</h3>
+                <div>
+                    <input type="text" ng-model="national.phoneNumber" phone-number></input>
+                </div>
+                <br>
+                <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="national.inputHtml"></div>
+                <h3>Using Element</h3>
+                <div>
+                    <phone-number ng-model="national.phoneNumber"></phone-number>
+                </div>
+                <br>
+                <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="national.elementHtml"></div>
+                <h3>Using Filter</h3>
+                <p>{{national.phoneNumber|phoneNumber}}</p>
+                <div style="height: 50px" ui-ace="{
+                      useWrapMode : true,
+                      showGutter: false,
+                      theme:'twilight',
+                      mode: 'html',
+                      firstLineNumber: 1
+                    }" ng-model="national.filterHtml"></div>
+            </div>
+            <a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h2>
+            <ol>
+                <li>Download app</li>
+                <li>Run "npm install"</li>
+                <li>Run "bower install"</li>
+                <li>Run "grunt serve"</li>
+            </ol>
+            <footer class="site-footer">
+                <span class="site-footer-owner"><a href="https://github.com/lposen/angular-phonenumber-formatter">Angular-phonenumber-formatter</a> is maintained by <a href="https://github.com/lposen">lposen</a>.</span>
+                <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+            </footer>
+        </section>
+        <!-- build:js(.) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="vendor/lodash.min.js"></script>
+        <script src="vendor/mode-html.js"></script>
+        <script src="vendor/worker-html.js"></script>
+        <script src="vendor/ace.js"></script>
+        <script src="vendor/angular.min.js"></script>
+        <script src="vendor/ui-ace.min.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="dist/phoneNumberFormatter.js"></script>
+        <!-- endbuild -->
+        <script src="core/app.js"></script>
+    </body>
 
-<p>'''</p>
-
-<p>{{myPhoneNumber|phoneNumber}}</p>
-
-<p>'''
-or
-'''
-$scope.myPhoneNumber = $filter('phoneNumber')($scope.myPhoneNumber);
-'''</p>
-
-<h2>
-<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h2>
-
-<ol>
-<li>Download app</li>
-<li>Run "npm install"</li>
-<li>Run "bower install"</li>
-<li>Run "grunt serve"</li>
-</ol>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/lposen/angular-phonenumber-formatter">Angular-phonenumber-formatter</a> is maintained by <a href="https://github.com/lposen">lposen</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
 </html>
+
