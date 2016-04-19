@@ -52,31 +52,33 @@
 <a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h3>
 
 <p>Add the module as a dependency
-<code>angular.module( "app", [</code>
-    <code>"phoneNumberFormatter"</code>
-<code>] );</code></p>
+    angular.module( "app", [
+       "phoneNumberFormatter"
+    ] );</p>
 
 <h3>
 <a id="input" class="anchor" href="#input" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Input</h3>
 
 <p>Add "phone-number" as an attribute and the value as ng-model
-<code>&lt;input type="text" ng-model="myPhoneNumber" phone-number&gt;&lt;/input&gt;</code></p>
+    </p>
 
 <h3>
 <a id="element" class="anchor" href="#element" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Element</h3>
 
 <p>Use "phone-number" as an attribute or element. Add the value as ng-model.
 If you're using it as an attribute, be aware that it creates an isolate scope, so you cannot use another attribute that creates an isolate scope on the same element
-<code>&lt;phone-number ng-model="myPhoneNumber"&gt;&lt;/phone-number&gt;</code>
+    
 or
-<code>&lt;p phone-number ng-model="myPhoneNumber"&gt;&lt;/p&gt;</code></p>
+    </p><p></p>
 
 <h3>
 <a id="filter" class="anchor" href="#filter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Filter</h3>
 
-<p><code>&lt;p&gt;{{myPhoneNumber|phoneNumber}}&lt;/p&gt;</code>
-or
-<code>$scope.myPhoneNumber = $filter('phoneNumber')($scope.myPhoneNumber);</code></p>
+<pre><code>&lt;p&gt;{{myPhoneNumber|phoneNumber}}&lt;/p&gt;
+</code></pre>
+
+<p>or
+    $scope.myPhoneNumber = $filter('phoneNumber')($scope.myPhoneNumber);</p>
 
 <h2>
 <a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h2>
